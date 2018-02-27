@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 26, 2018 at 10:55 AM
+-- Generation Time: Feb 27, 2018 at 09:21 AM
 -- Server version: 10.1.29-MariaDB
 -- PHP Version: 7.1.12
 
@@ -92,7 +92,10 @@ INSERT INTO `device_receive_records` (`id`, `device_id`, `temperature`, `moistur
 (8, 6, '10', '20', '30', '2018-02-26 10:12:50'),
 (9, 6, '10', '20', '30', '2018-02-26 10:30:33'),
 (10, 6, '15', '20', '30', '2018-02-26 10:30:35'),
-(11, 6, '15', '21', '30', '2018-02-26 10:30:37');
+(11, 6, '15', '21', '30', '2018-02-26 10:30:37'),
+(12, 6, '1', '2', '3', '2018-02-27 08:18:12'),
+(13, 6, '1', '2', '3', '2018-02-27 08:21:10'),
+(14, 6, '1', '2', '3', '2018-02-27 08:21:20');
 
 -- --------------------------------------------------------
 
@@ -155,8 +158,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `email`, `full_name`, `password`, `date_created`, `status`, `pwd_reset_token`, `pwd_reset_token_creation_date`) VALUES
-(1, 'phamtheanhphu@gmail.com', 'Phu Pham', '$2y$10$BzuBpFvOdh/BWXRUPoX3y.vOGGM9g.7EH1MJ087YgEXX/wR9.b3IO', '2018-02-22 11:34:16', '1', NULL, NULL),
-(6, 'test@gmail.com', 'Test 1', '$2y$10$oxvuWL5HJP4GPhOLEX8STeHn5crxEOi.An2T2QaI43vgrotneUpMK', '2018-02-26 03:49:39', '1', NULL, NULL);
+(1, 'admin@eco-idea.vn', 'Admin', '$2y$10$BzuBpFvOdh/BWXRUPoX3y.vOGGM9g.7EH1MJ087YgEXX/wR9.b3IO', '2018-02-22 11:34:16', '1', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -174,8 +176,7 @@ CREATE TABLE `user_group_maps` (
 --
 
 INSERT INTO `user_group_maps` (`user_id`, `group_id`) VALUES
-(1, '1'),
-(6, '2');
+(1, '1');
 
 --
 -- Indexes for dumped tables
@@ -250,7 +251,7 @@ ALTER TABLE `device_config_records`
 -- AUTO_INCREMENT for table `device_receive_records`
 --
 ALTER TABLE `device_receive_records`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT for table `device_types`
