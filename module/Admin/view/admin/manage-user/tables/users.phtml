@@ -1,0 +1,136 @@
+<?php
+/**
+ * Created by PhpStorm.
+ * User: phu.pham
+ * Date: 23/2/2018
+ * Time: 10:47 AM
+ */
+use \User\Entity\User;
+?>
+
+<table class="table table-hover" id="user_table">
+
+    <thead>
+
+    <tr>
+
+        <th class="no-sort">
+            <?= $this->translate('Mã'); ?>
+        </th>
+
+        <th class="no-sort">
+            <?= $this->translate('Email'); ?>
+        </th>
+
+        <th class="no-sort">
+            <?= $this->translate('Tên người dùng'); ?>
+        </th>
+
+        <th class="no-sort">
+            <?= $this->translate('Ngày tạo'); ?>
+        </th>
+
+        <th class="no-sort">
+            <?= $this->translate('Tình trạng'); ?>
+        </th>
+
+        <th class="no-sort">
+            <?= $this->translate('Hành động'); ?>
+        </th>
+
+    </tr>
+
+    </thead>
+
+    <tbody>
+
+    <?php foreach ($users as $user): ?>
+
+        <?php if ($user instanceof User): ?>
+
+            <tr>
+
+                <td>
+                    <?= $this->escapeHtml($user->getId()); ?>
+                </td>
+
+                <td>
+                    <a href="<?= $this->url('admin/manage-user', ['action' => 'view', 'id' => $user->getId()]); ?>">
+                        <?= $this->escapeHtml($user->getEmail()); ?>
+                    </a>
+                </td>
+
+                <td>
+                    <?= $this->escapeHtml($user->getFullName()); ?>
+                </td>
+
+                <td>
+                    <?= $this->escapeHtml($user->getDateCreated()); ?>
+                </td>
+
+                <td>
+                    <?= $this->escapeHtml($user->getStatusAsString()); ?>
+                </td>
+
+                <td>
+
+                    <a class="btn btn-default" href="<?= $this->url('admin/manage-user',
+                        ['action' => 'edit', 'id' => $user->getId()]); ?>">
+                        <i class="fa fa-edit"></i>
+                        <?= $this->translate('Cập nhật'); ?>
+                    </a>
+
+                    <a class="btn btn-default" href="<?= $this->url('admin/manage-user',
+                        ['action' => 'change-password', 'id' => $user->getId()]); ?>">
+                        <i class="fa fa-lock"></i>
+                        <?= $this->translate('Mật khẩu'); ?>
+                    </a>
+
+                    <a class="btn btn-danger" href="<?= $this->url('admin/manage-user',
+                        ['action' => 'remove', 'id' => $user->getId()]); ?>">
+                        <i class="fa fa-trash"></i>
+                        <?= $this->translate('Xóa'); ?>
+                    </a>
+
+                    <!--<a class="btn btn-default" href="<?/*= $this->url('users',
+                        ['action' => 'change-password', 'id' => $user->getId()]); */?>">
+                        <span class="glyphicon glyphicon-asterisk"></span> Change Password
+                    </a>-->
+                </td>
+
+            </tr>
+        <?php endif; ?>
+
+    <?php endforeach; ?>
+
+    </tbody>
+
+    <tfoot>
+    <tr>
+        <th class="no-sort">
+            <?= $this->translate('Mã'); ?>
+        </th>
+
+        <th class="no-sort">
+            <?= $this->translate('Email'); ?>
+        </th>
+
+        <th class="no-sort">
+            <?= $this->translate('Tên người dùng'); ?>
+        </th>
+
+        <th class="no-sort">
+            <?= $this->translate('Ngày tạo'); ?>
+        </th>
+
+        <th class="no-sort">
+            <?= $this->translate('Tình trạng'); ?>
+        </th>
+
+        <th class="no-sort">
+            <?= $this->translate('Hành động'); ?>
+        </th>
+    </tr>
+    </tfoot>
+
+</table>

@@ -1,0 +1,183 @@
+<?php
+$this->headTitle('Trang chủ');
+
+$this->mainMenu()->setActiveItemId('trang-chu');
+
+$this->pageBreadcrumbs()->setItems([
+    'Trang chủ' => $this->url('trang-chu')
+]);
+?>
+
+<!-- Main carousel -->
+<?php echo $this->partial('layout/partials/carousels/main_carousel'); ?>
+
+<div class="banner_bottom_agile_info">
+
+    <div class="container">
+
+        <div class="banner_bottom_agile_info_inner_w3ls">
+
+            <div class="col-md-4 grid">
+
+                <figure class="effect-roxy">
+                    <img src="<?php echo $this->basePath('images/frontend/middle_banner_1.jpg'); ?>"
+                         alt=" " class="img-responsive"/>
+                    <figcaption>
+                        <h3><span>H</span>iệu <span>Q</span>uả</h3>
+                        <p>Quản lý hiệu quả, dễ tích hợp</p>
+                    </figcaption>
+                </figure>
+
+                <div style="margin-top: 10px;text-align: justify;">
+                    Bắt kịp xu thế của CMCN 4.0, <a href="http://eco-idea.vn/">eco-idea.vn</a> mang đến một giải pháp
+                    quản lý nông nghiệp một cách <strong>thông minh</strong> và <strong>hiệu quả</strong>.
+                </div>
+
+            </div>
+
+            <div class="col-md-4 grid">
+
+                <figure class="effect-roxy">
+                    <img src="<?php echo $this->basePath('images/frontend/middle_banner_2.jpg'); ?>" alt=" "
+                         class="img-responsive"/>
+                    <figcaption>
+                        <h3><span>A</span>n <span>T</span>oàn</h3>
+                        <p>An toàn, thân thiện môi trường</p>
+                    </figcaption>
+                </figure>
+
+                <div style="margin-top: 10px;text-align: justify;">
+                    Giải pháp của <a href="http://eco-idea.vn/">eco-idea.vn</a> luôn đảm bảo <strong>an toàn</strong>
+                    thân thiện với môi
+                    trường, cũng như <strong>tiết kiệm</strong> điện năng tiêu thụ.
+                </div>
+
+            </div>
+
+            <div class="col-md-4 grid">
+
+                <figure class="effect-roxy">
+                    <img src="<?php echo $this->basePath('images/frontend/middle_banner_3.jpg'); ?>" alt=" "
+                         class="img-responsive"/>
+                    <figcaption>
+                        <h3><span>T</span>huận <span>T</span>iện</h3>
+                        <p>Tương thích đa nền tảng cài đặt</p>
+                    </figcaption>
+                </figure>
+
+                <div style="margin-top: 10px;text-align: justify;">
+                    Ứng dụng quản lý của <a href="http://eco-idea.vn/">eco-idea.vn</a> cung cấp <strong>đa dạng</strong>,
+                    có thể <strong>tương thích</strong> và cài đặt trên đa nền tảng (web, mobile, tablet...).
+                </div>
+
+            </div>
+
+            <div class="clearfix"></div>
+
+        </div>
+    </div>
+
+</div>
+
+
+<!-- /we-offer -->
+<div class="sale-w3ls">
+
+    <div class="container">
+
+        <h6>
+            <a style="color: #f77737" href="http://eco-idea.vn/">Eco-idea</a>giải pháp
+            <span style="color: #f77737;text-decoration: underline;">hiệu quả</span>,
+            <span style="color: #f77737;text-decoration: underline;">tiết kiệm</span> và
+            <span style="color: #f77737;text-decoration: underline;">thân thiện</span> môi trường
+        </h6>
+
+        <a class="hvr-outline-out button2" href="single.html">
+            Liên hệ với chúng tôi ngay !
+        </a>
+
+    </div>
+
+</div>
+
+<!--/grids-->
+<div class="coupons">
+
+    <div class="coupons-grids text-center">
+
+        <div class="w3layouts_mail_grid">
+
+            <div class="col-md-3 w3layouts_mail_grid_left">
+
+
+                <div class="w3layouts_mail_grid_left1 hvr-radial-out">
+                    <i class="fa fa-check-square-o" aria-hidden="true"></i>
+                </div>
+
+                <div class="w3layouts_mail_grid_left2">
+                    <h3>HỖ TRỢ LẮP ĐẶT</h3>
+                    <p style="text-align: justify;">
+                        Hỗ trợ tư vấn giải pháp và lắp đặt các thiết bị theo yêu cầu riêng biệt.
+                    </p>
+                </div>
+
+
+            </div>
+
+            <div class="col-md-3 w3layouts_mail_grid_left">
+
+                <div class="w3layouts_mail_grid_left1 hvr-radial-out">
+                    <i class="fa fa-phone" aria-hidden="true"></i>
+                </div>
+
+                <div class="w3layouts_mail_grid_left2">
+                    <h3>MIỄN PHÍ TƯ VẤN</h3>
+                    <p style="text-align: justify;">
+                        Hỗ trợ tư vấn và giải đáp các thắc mắc liên quan đến các gói giải pháp.
+                    </p>
+                </div>
+
+            </div>
+
+            <div class="col-md-3 w3layouts_mail_grid_left">
+
+                <div class="w3layouts_mail_grid_left1 hvr-radial-out">
+                    <i class="fa fa-dollar" aria-hidden="true"></i>
+                </div>
+
+                <div class="w3layouts_mail_grid_left2">
+                    <h3>MIỄN PHÍ BẢO TRÌ</h3>
+                    <p style="text-align: justify;">
+                        Miễn phí bảo trì và thay mới thiết bị khi có sự cố trong thời gian bảo hành.
+                    </p>
+                </div>
+
+            </div>
+
+            <div class="col-md-3 w3layouts_mail_grid_left">
+
+                <div class="w3layouts_mail_grid_left1 hvr-radial-out">
+                    <i class="fa fa-gift" aria-hidden="true"></i>
+                </div>
+
+                <div class="w3layouts_mail_grid_left2">
+
+                    <h3>KHUYẾN MÃI HẤP DẪN</h3>
+                    <p style="text-align: justify;">
+                        <a style="color: #f77737" href="http://eco-idea.vn/">Eco-idea</a> thường xuyên tổ chức các
+                        chương trình khuyến mãi hấp dẫn.
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="clearfix"></div>
+
+        </div>
+
+    </div>
+</div>
+<!--grids-->
+
+

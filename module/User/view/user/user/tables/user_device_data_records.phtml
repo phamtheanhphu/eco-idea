@@ -1,0 +1,106 @@
+<?php
+/**
+ * Created by PhpStorm.
+ * User: phu.pham
+ * Date: 26/2/2018
+ * Time: 4:17 PM
+ */
+use \Device\Entity\Record\DeviceReceiveRecord;
+
+?>
+
+
+<table class="table table-hover" id="user_device_data_records">
+
+    <thead>
+
+    <tr>
+
+        <th class="no-sort">
+            <?= $this->translate('Mã'); ?>
+        </th>
+
+        <th class="no-sort">
+            <?= $this->translate('Nhiệt độ'); ?>
+        </th>
+
+        <th class="no-sort">
+            <?= $this->translate('Độ ẩm'); ?>
+        </th>
+
+        <th class="no-sort">
+            <?= $this->translate('Ánh sáng'); ?>
+        </th>
+
+        <th class="no-sort">
+            <?= $this->translate('Thời gian nhận'); ?>
+        </th>
+
+    </tr>
+
+    </thead>
+
+    <tbody>
+
+    <?php foreach ($receive_records as $record): ?>
+        <?php if ($record instanceof DeviceReceiveRecord): ?>
+
+            <tr>
+
+                <td>
+                    <?= $record->getId() ?>
+                </td>
+
+                <td>
+                    <?= $this->escapeHtml($record->getTemperature()); ?>
+                </td>
+
+                <td>
+                    <?= $this->escapeHtml($record->getMoisture()); ?>
+                </td>
+
+                <td>
+                    <?= $this->escapeHtml($record->getLight()); ?>
+                </td>
+
+                <td>
+                    <?= $this->escapeHtml($record->getReceivedDatetime()->format('Y-m-d H:i:s')); ?>
+                </td>
+
+            </tr>
+
+        <?php endif; ?>
+    <?php endforeach; ?>
+
+
+    </tbody>
+
+    <tfoot>
+    <tr>
+
+        <th class="no-sort">
+            <?= $this->translate('Mã'); ?>
+        </th>
+
+        <th class="no-sort">
+            <?= $this->translate('Nhiệt độ'); ?>
+        </th>
+
+        <th class="no-sort">
+            <?= $this->translate('Độ ẩm'); ?>
+        </th>
+
+        <th class="no-sort">
+            <?= $this->translate('Ánh sáng'); ?>
+        </th>
+
+        <th class="no-sort">
+            <?= $this->translate('Thời gian nhận'); ?>
+        </th>
+
+
+    </tr>
+
+    </tfoot>
+
+</table>

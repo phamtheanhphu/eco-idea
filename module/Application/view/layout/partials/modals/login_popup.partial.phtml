@@ -1,0 +1,89 @@
+<?php
+/**
+ * Created by PhpStorm.
+ * User: phu.pham
+ * Date: 23/1/2018
+ * Time: 1:48 PM
+ */
+
+$login_form = $this->layout()->login_form;
+
+?>
+
+
+<div class="modal fade" id="login_modal" tabindex="-1" role="dialog">
+
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+
+            <div class="modal-body modal-body-sub_agile">
+
+                <div class="col-md-8 modal_body_left modal_body_left1">
+
+                    <h3 class="agileinfo_sign" style="padding-bottom: 15px; border-bottom: 1px solid;   ">
+                        <i class="fa fa-unlock-alt" aria-hidden="true"></i>
+                        Đăng nhập nhanh
+                    </h3>
+
+                    <form action="<?php echo $this->url('login'); ?>" method="post">
+
+
+                        <div>
+                            <?= $this->formLabel($login_form->get('email')); ?>
+                            <?= $this->formElement($login_form->get('email')); ?>
+                        </div>
+
+
+                        <div style="margin-top: 10px;">
+                            <?= $this->formLabel($login_form->get('password')); ?>
+                            <?= $this->formElement($login_form->get('password')); ?>
+                        </div>
+
+
+                        <?= $this->formElement($login_form->get('redirect_url')); ?>
+                        <?= $this->formElement($login_form->get('csrf')) ?>
+
+                        <div class="checkbox">
+                            <label>
+                                <?= $this->formElement($login_form->get('remember_me')); ?>
+                                <?php echo $login_form->get('remember_me')->getOption('label'); ?>
+                            </label>
+                        </div>
+
+                        <div style="margin-top: 10px;margin-bottom: 15px;">
+                            <button class="btn btn-lg btn-primary btn-block" type="submit">Đăng nhập</button>
+                        </div>
+
+                        <!--<input type="submit" value="Đăng nhập ngay">-->
+
+                    </form>
+
+                    <div class="clearfix"></div>
+
+                    <p>
+                        <a href="#" data-toggle="modal" data-target="#signup_modal">
+                            Bạn chưa có tài khoản, cần đăng ký ?
+                        </a>
+                    </p>
+
+                </div>
+
+                <div class="col-md-4 modal_body_right modal_body_right1">
+                    <img src="<?php echo $this->basePath('images/frontend/login_right_banner.jpg'); ?>" alt=" "/>
+                </div>
+
+                <div class="clearfix"></div>
+
+            </div>
+
+        </div>
+        <!-- //Modal content-->
+    </div>
+
+</div>

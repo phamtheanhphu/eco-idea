@@ -1,0 +1,78 @@
+<?php
+/**
+ * Created by PhpStorm.
+ * User: phu.pham
+ * Date: 22/2/2018
+ * Time: 4:28 PM
+ */
+
+$this->headTitle('Danh sách người dùng');
+
+//$this->mainMenu()->setActiveItemId('lien-he');
+
+$this->pageBreadcrumbs()->setItems([
+    'Quản trị' => $this->url('admin'),
+    'Danh sách người dùng' => $this->url('admin/manage-user', ['action' => 'index']),
+
+]);
+
+$this->pageBreadcrumbs()->setTopImageBanner(
+    $this->basePath('images/frontend/admin_manage_user_top_banner.jpg'));
+
+$this->pageBreadcrumbs()->setPageLabel('Danh sách người dùng');
+
+//init plugins
+if (isset($initPlugins)) {
+    echo $this->partial('app/init_plugin', ['initPlugins' => $initPlugins]);
+}
+
+?>
+
+<!-- breadcrumbs -->
+<?= $this->pageBreadcrumbs()->render(); ?>
+
+
+<div class="container">
+
+    <div class="container_main_body">
+
+        <h5>
+            <i class="fa fa-list"></i>
+            Danh sách người dùng
+        </h5>
+
+        <div class="top_menu_bar">
+
+            <a class="btn btn-app" href="<?= $this->url('admin/manage-user', ['action' => 'add']); ?>">
+                <i class="fa fa-plus"></i>
+                Thêm mới
+            </a>
+
+            <a class="btn btn-app" href="<?= $this->url('admin/manage-user', ['action' => 'index']); ?>">
+                <i class="fa fa-refresh"></i>
+                Refresh
+            </a>
+
+            <a class="btn btn-app" href="<?= $this->url('admin', ['action' => 'index']); ?>">
+                <i class="fa fa-sign-out"></i>
+                Thoát
+            </a>
+
+        </div>
+
+        <div class="body_content">
+            <?php echo $this->partial('manage-user/tables/users'); ?>
+        </div>
+
+    </div>
+
+</div>
+
+<!-- scripts -->
+<script type="text/javascript">
+
+    $(document).ready(function () {
+        var user_table = EcoIdeaDataTables.initStaticDataTable('user_table', false);
+    });
+
+</script>

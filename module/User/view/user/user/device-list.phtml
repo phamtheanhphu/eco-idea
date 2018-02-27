@@ -1,0 +1,74 @@
+<?php
+/**
+ * Created by PhpStorm.
+ * User: phu.pham
+ * Date: 26/2/2018
+ * Time: 10:13 AM
+ */
+
+$this->headTitle('Quản lý thiết bị');
+
+$this->pageBreadcrumbs()->setItems([
+    'Người dùng' => $this->url('users'),
+    'Danh sách thiết bị' => $this->url('users',
+        ['action' => 'device-list']),
+]);
+
+$this->pageBreadcrumbs()->setTopImageBanner(
+    $this->basePath('images/frontend/user_home_page_banner.jpg'));
+
+$this->pageBreadcrumbs()->setPageLabel('Thiết bị của bạn');
+
+//init plugins
+if (isset($initPlugins)) {
+    echo $this->partial('app/init_plugin', ['initPlugins' => $initPlugins]);
+}
+
+
+?>
+
+<!-- breadcrumbs -->
+<?= $this->pageBreadcrumbs()->render(); ?>
+
+<div class="container">
+
+    <div class="container_main_body">
+
+        <h5>
+            <i class="fa fa-list"></i>
+            Danh sách thiết bị
+        </h5>
+
+        <div class="top_menu_bar">
+
+            <a class="btn btn-app" href="<?= $this->url('users', ['action' => 'device-list']); ?>">
+                <i class="fa fa-refresh"></i>
+                Refresh
+            </a>
+
+            <a class="btn btn-app" href="<?= $this->url('users', ['action' => 'index']); ?>">
+                <i class="fa fa-sign-out"></i>
+                Thoát
+            </a>
+
+        </div>
+
+        <div class="body_content">
+            <?php echo $this->partial('user/tables/user_devices'); ?>
+        </div>
+
+    </div>
+
+</div>
+
+<!-- scripts -->
+<script type="text/javascript">
+
+    $(document).ready(function () {
+        var user_device_table = EcoIdeaDataTables
+            .initStaticDataTable('user_device_table', false);
+    });
+
+</script>
+
+

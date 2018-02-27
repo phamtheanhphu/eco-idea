@@ -1,0 +1,200 @@
+/* layout */
+.container_main_body {
+    padding: 1em 0;
+}
+
+.top_menu_bar {
+    margin-bottom: 1em;
+    border-radius: 3px;
+    background: #ffffff;
+    border-top: 2px solid #d2d6de;
+    width: 100%;
+    box-shadow: 0 15px 30px rgba(6, 6, 6, 0.1);
+    padding: 10px;
+}
+
+.container_main_body h5 {
+    text-transform: uppercase;
+    font-size: 2em;
+    color: #212121;
+    letter-spacing: 2px;
+    font-weight: 700;
+    margin-bottom: 0.5em;
+}
+
+.container_main_body .body_content {
+    position: relative;
+    border-radius: 3px;
+    background: #ffffff;
+    border-top: 3px solid #d2d6de;
+    margin-bottom: 20px;
+    width: 100%;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+}
+
+/* admin image buttons */
+figure.snip1321 {
+    font-family: 'Raleway', Arial, sans-serif;
+    position: relative;
+    float: left;
+    overflow: hidden;
+    margin: 10px 1%;
+    min-width: 100px;
+    max-width: 200px;
+    width: 100%;
+    color: #000000;
+    text-align: center;
+    -webkit-perspective: 50em;
+    perspective: 50em;
+    border: 1px solid;
+    padding: 10px;
+}
+
+figure.snip1321 * {
+    -webkit-box-sizing: padding-box;
+    box-sizing: padding-box;
+    -webkit-transition: all 0.2s ease-out;
+    transition: all 0.2s ease-out;
+}
+
+figure.snip1321 img {
+    max-width: 100%;
+    vertical-align: top;
+}
+
+figure.snip1321 figcaption {
+    top: 50%;
+    left: 20px;
+    right: 20px;
+    position: absolute;
+    opacity: 0;
+    z-index: 1;
+}
+
+figure.snip1321 h2,
+figure.snip1321 h4 {
+    margin: 0;
+}
+
+figure.snip1321 h2 {
+    font-weight: 600;
+}
+
+figure.snip1321 h4 {
+    font-weight: 400;
+    text-transform: uppercase;
+}
+
+figure.snip1321 i {
+    font-size: 32px;
+}
+
+figure.snip1321:after {
+    background-color: #ffffff;
+    position: absolute;
+    content: "";
+    display: block;
+    top: 20px;
+    left: 20px;
+    right: 20px;
+    bottom: 20px;
+    -webkit-transition: all 0.4s ease-in-out;
+    transition: all 0.4s ease-in-out;
+    -webkit-transform: rotateX(-90deg);
+    transform: rotateX(-90deg);
+    -webkit-transform-origin: 50% 50%;
+    -ms-transform-origin: 50% 50%;
+    transform-origin: 50% 50%;
+    opacity: 0;
+}
+
+figure.snip1321 a {
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    position: absolute;
+    z-index: 1;
+}
+
+figure.snip1321:hover figcaption,
+figure.snip1321.hover figcaption {
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+    opacity: 1;
+    -webkit-transition-delay: 0.2s;
+    transition-delay: 0.2s;
+}
+
+figure.snip1321:hover:after,
+figure.snip1321.hover:after {
+    -webkit-transform: rotateX(0);
+    transform: rotateX(0);
+    opacity: 0.9;
+}
+
+.login-form {
+    /*nothing*/
+}
+
+.form-button {
+    border: none;
+    padding: 10px 40px 10px;
+    font-size: 14px;
+    outline: none;
+    text-transform: uppercase;
+    margin: 0 0 0 -4px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: #ffffff;
+}
+
+.form-button.success {
+    background: #5cb85c;
+}
+
+.form-button.primary {
+    background: #337ab7;
+}
+
+.form-button.info {
+    background: #5bc0de;
+}
+
+.btn-app {
+    border-radius: 3px;
+    position: relative;
+    padding: 15px 5px;
+    margin: 0 0 10px 10px;
+    min-width: 80px;
+    height: 60px;
+    text-align: center;
+    color: #666;
+    border: 1px solid #ddd;
+    background-color: #f4f4f4;
+    font-size: 12px;
+    box-shadow: 3px 3px 5px #888888;
+}
+
+.btn-app > .fa, .btn-app > .glyphicon, .btn-app > .ion {
+    font-size: 20px;
+    display: block;
+}
+
+/* select 2 */
+
+.select2-container .select2-selection--single {
+    box-sizing: border-box;
+    cursor: pointer;
+    display: block;
+    user-select: none;
+    -webkit-user-select: none;
+    height: 35px !important;
+    padding-top: 3px;
+    margin-top: 3px;
+}
+
+.select2-container--default .select2-selection--single .select2-selection__arrow {
+    top: 7px !important;
+}

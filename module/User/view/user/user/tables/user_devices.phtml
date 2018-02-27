@@ -1,0 +1,148 @@
+<?php
+/**
+ * Created by PhpStorm.
+ * User: phu.pham
+ * Date: 23/2/2018
+ * Time: 4:24 PM
+ */
+use \Device\Entity\Device;
+
+?>
+
+<table class="table table-hover" id="user_device_table">
+
+    <thead>
+
+    <tr>
+
+        <th class="no-sort">
+            <?= $this->translate('Mã'); ?>
+        </th>
+
+        <th class="no-sort">
+            <?= $this->translate('Hình'); ?>
+        </th>
+
+        <th class="no-sort">
+            <?= $this->translate('Mã thiết bị'); ?>
+        </th>
+
+        <th class="no-sort">
+            <?= $this->translate('Ngày tạo'); ?>
+        </th>
+
+        <th class="no-sort">
+            <?= $this->translate('Tình trạng'); ?>
+        </th>
+
+        <th class="no-sort">
+            <?= $this->translate('Hành động'); ?>
+        </th>
+
+    </tr>
+
+    </thead>
+
+    <tbody>
+
+    <?php foreach ($devices as $device): ?>
+
+        <?php if ($device instanceof Device): ?>
+
+            <tr>
+
+                <td>
+                    <?= $this->escapeHtml($device->getId()); ?>
+                </td>
+
+                <td>
+
+                    <?php if ($device->getImage()): ?>
+                        <img style="width: 50px;height: 50px"
+                             src="<?= $this->basePath('uploads/' . $this->escapeHtml($device->getImage())); ?>">
+                    <?php else: ?>
+                        <img style="max-width: 50px;max-height: 50px"
+                             src="<?= $this->basePath('images/noimage.png'); ?>">
+                    <?php endif; ?>
+
+                </td>
+
+                <td>
+                    <a href="<?= $this->url('users',
+                        ['action' => 'device-detail', 'id' => $device->getId()]) ?>">
+                        <?= $this->escapeHtml($device->getDeviceUniqueId()); ?>
+                    </a>
+                </td>
+
+
+                <td>
+                    <?= $this->escapeHtml($device->getDateImplemented()->format('Y/m/d')); ?>
+                </td>
+
+                <td>
+                    <?= $this->escapeHtml($device->getStatus()); ?>
+                </td>
+
+                <td>
+
+                    <a class="btn btn-default" href="<?= $this->url('users',
+                        ['action' => 'device-setup-config', 'id' => $device->getId()]); ?>">
+                        <i class="fa fa-edit"></i>
+                        <?= $this->translate('Cấu hình'); ?>
+                    </a>
+
+                    <a class="btn btn-default" href="<?= $this->url('users',
+                        ['action' => 'device-view-data-record', 'id' => $device->getId()]); ?>">
+                        <i class="fa fa-bar-chart"></i>
+                        <?= $this->translate('Xem dữ liệu'); ?>
+                    </a>
+
+                    <a class="btn btn-default" href="<?= $this->url('admin/manage-device',
+                        ['action' => 'edit', 'id' => $device->getId()]); ?>">
+                        <i class="fa fa-gears"></i>
+                        <?= $this->translate('Gửi điều khiển'); ?>
+                    </a>
+
+
+
+                </td>
+
+            </tr>
+        <?php endif; ?>
+
+    <?php endforeach; ?>
+
+    </tbody>
+
+    <tfoot>
+    <tr>
+
+        <th class="no-sort">
+            <?= $this->translate('Mã'); ?>
+        </th>
+
+        <th class="no-sort">
+            <?= $this->translate('Hình'); ?>
+        </th>
+
+        <th class="no-sort">
+            <?= $this->translate('Mã thiết bị'); ?>
+        </th>
+
+        <th class="no-sort">
+            <?= $this->translate('Ngày tạo'); ?>
+        </th>
+
+        <th class="no-sort">
+            <?= $this->translate('Tình trạng'); ?>
+        </th>
+
+        <th class="no-sort">
+            <?= $this->translate('Hành động'); ?>
+        </th>
+
+    </tr>
+
+    </tfoot>
+
+</table>

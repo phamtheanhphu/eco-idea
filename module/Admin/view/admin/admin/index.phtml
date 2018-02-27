@@ -1,0 +1,116 @@
+<?php
+/**
+ * Created by PhpStorm.
+ * User: phu.pham
+ * Date: 23/2/2018
+ * Time: 9:20 AM
+ */
+
+$this->headTitle('Trang quản trị');
+
+$this->pageBreadcrumbs()->setItems([
+    'Quản trị' => $this->url('admin'),
+
+]);
+
+$this->pageBreadcrumbs()->setTopImageBanner(
+    $this->basePath('images/frontend/admin_manage_user_top_banner.jpg'));
+
+$this->pageBreadcrumbs()->setPageLabel('Trang quản trị');
+
+//init plugins
+if (isset($initPlugins)) {
+    echo $this->partial('app/init_plugin', ['initPlugins' => $initPlugins]);
+}
+
+?>
+
+<!-- breadcrumbs -->
+<?= $this->pageBreadcrumbs()->render(); ?>
+
+<div class="container">
+
+    <div class="container_main_body">
+
+        <h5>
+            <i class="fa fa-list"></i>
+            Các tính năng
+        </h5>
+
+
+        <div class="body_content">
+
+            <div class="row">
+
+                <div class="col-md-12">
+
+                    <figure class="snip1321">
+
+                        <img src="<?= $this->basePath('images/frontend/admin_buttons/manage_user.png'); ?>"/>
+
+                        <figcaption>
+                            <i class="ion-upload"></i>
+                            <h4>Quản lý </h4>
+                            <h2>Tài khoản</h2>
+                        </figcaption>
+
+                        <a href="<?= $this->url('admin/manage-user', ['action' => 'index']); ?>"></a>
+
+                    </figure>
+
+                    <figure class="snip1321">
+
+                        <img src="<?= $this->basePath('images/frontend/admin_buttons/manage_devices.png'); ?>"/>
+
+                        <figcaption>
+                            <i class="ion-upload"></i>
+                            <h4>Quản lý </h4>
+                            <h2>Thiết bị</h2>
+                        </figcaption>
+
+                        <a href="<?= $this->url('admin/manage-device', ['action' => 'index']); ?>"></a>
+
+                    </figure>
+
+                    <figure class="snip1321">
+                        <img src="<?= $this->basePath('images/frontend/admin_buttons/manage_news.png'); ?>"/>
+                        <figcaption>
+                            <i class="ion-upload"></i>
+                            <h4>Quản lý</h4>
+                            <h2>Bài viết</h2>
+                        </figcaption>
+                        <a href="#"></a>
+                    </figure>
+
+                    <figure class="snip1321">
+                        <img src="<?= $this->basePath('images/frontend/admin_buttons/manage_reports.png'); ?>"/>
+                        <figcaption>
+                            <i class="ion-upload"></i>
+                            <h4>Quản lý</h4>
+                            <h2>Báo cáo / report</h2>
+                        </figcaption>
+                        <a href="#"></a>
+                    </figure>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+</div>
+
+<script type="text/javascript">
+
+    $(".hover").mouseleave(
+        function () {
+            $(this).removeClass("hover");
+        }
+    );
+
+
+</script>
+

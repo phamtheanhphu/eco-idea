@@ -1,0 +1,136 @@
+<?php
+/**
+ * Created by PhpStorm.
+ * User: phu.pham
+ * Date: 26/2/2018
+ * Time: 2:45 PM
+ */
+
+$this->headTitle('Cấu hình thiết bị');
+
+//$this->mainMenu()->setActiveItemId('lien-he');
+
+$this->pageBreadcrumbs()->setItems([
+    'Quản trị' => $this->url('admin'),
+    'Thiết bị' => $this->url('users', ['action' => 'device-list']),
+    $device->getDeviceUniqueId() => $this->url('users',
+        ['action' => 'device-detail', 'id' => $device->getId()]),
+]);
+
+$this->pageBreadcrumbs()->setTopImageBanner(
+    $this->basePath('images/frontend/admin_manage_device_top_banner.jpg'));
+
+$this->pageBreadcrumbs()->setPageLabel('Cấu hình thiết bị');
+
+//init plugins
+if (isset($initPlugins)) {
+    echo $this->partial('app/init_plugin', ['initPlugins' => $initPlugins]);
+}
+
+$form->setAttribute('id', 'device_setup_config_form');
+$form->prepare();
+
+?>
+
+<!-- breadcrumbs -->
+<?= $this->pageBreadcrumbs()->render(); ?>
+
+<div class="container">
+
+    <div class="container_main_body">
+
+        <h5>
+            <i class="fa fa-edit"></i>
+            Cấu hình thiết bị: <?= $this->escapeHtml($device->getDeviceUniqueId()) ?>
+        </h5>
+
+        <div class="top_menu_bar">
+
+            <a class="btn btn-app" onclick="document.getElementById('device_setup_config_form').submit();">
+                <i class="fa fa-save"></i>
+                Lưu lại
+            </a>
+
+            <a href="<?= $this->url('users',
+                ['action' => 'device-setup-config', 'id' => $device->getId()]); ?>"
+               class="btn btn-app">
+                <i class="fa fa-refresh"></i>
+                Refresh
+            </a>
+
+            <a class="btn btn-app" href="<?= $this->url('users',
+                ['action' => 'device-list']); ?>">
+                <i class="fa fa-sign-out"></i>
+                Thoát
+            </a>
+
+        </div>
+
+        <div class="body_content">
+
+
+            <div class="row">
+
+                <div class="col-md-6">
+
+
+                    <!-- message -->
+                    <?= $this->message()->render(); ?>
+
+                    <?= $this->form()->openTag($form); ?>
+
+
+                    <div class="form-group">
+                        <?= $this->formLabel($form->get('automatic_mode_enable')); ?>
+                        <?= $this->formElement($form->get('automatic_mode_enable')); ?>
+                        <?= $this->formElementErrors($form->get('automatic_mode_enable')); ?>
+                    </div>
+
+
+                    <div class="form-group">
+                        <?= $this->formLabel($form->get('send_data_to_server_interval')); ?>
+                        <?= $this->formElement($form->get('send_data_to_server_interval')); ?>
+                        <?= $this->formElementErrors($form->get('send_data_to_server_interval')); ?>
+                    </div>
+
+                    <div class="form-group">
+                        <?= $this->formLabel($form->get('send_state_to_server_interval')); ?>
+                        <?= $this->formElement($form->get('send_state_to_server_interval')); ?>
+                        <?= $this->formElementErrors($form->get('send_state_to_server_interval')); ?>
+                    </div>
+
+                    <div class="form-group">
+                        <?= $this->formLabel($form->get('get_command_from_server_interval')); ?>
+                        <?= $this->formElement($form->get('get_command_from_server_interval')); ?>
+                        <?= $this->formElementErrors($form->get('get_command_from_server_interval')); ?>
+                    </div>
+
+
+                    <?= $this->form()->closeTag(); ?>
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+</div>
+
+<script type="text/javascript">
+
+    $(document).ready(function () {
+        $('#automatic_mode_enable').select2();
+        $('#send_data_to_server_interval').select2();
+        $('#send_state_to_server_interval').select2();
+        $('#get_command_from_server_interval').select2();
+    })
+
+</script>
+
+
+

@@ -1,0 +1,79 @@
+<?php
+/**
+ * Created by PhpStorm.
+ * User: phu.pham
+ * Date: 26/2/2018
+ * Time: 10:13 AM
+ */
+
+$this->headTitle('Xem dữ liệu thiết bị');
+
+$this->pageBreadcrumbs()->setItems([
+    'Người dùng' => $this->url('users'),
+    'Thiết bị' => $this->url('users',
+        ['action' => 'device-list']),
+    'Dữ liệu' => $this->url('users',
+        ['action' => 'device-view-data-record',
+            'id' => $device->getId()]),
+]);
+
+$this->pageBreadcrumbs()->setTopImageBanner(
+    $this->basePath('images/frontend/user_home_page_banner.jpg'));
+
+$this->pageBreadcrumbs()->setPageLabel('Xem dữ liệu thiết bị');
+
+//init plugins
+if (isset($initPlugins)) {
+    echo $this->partial('app/init_plugin', ['initPlugins' => $initPlugins]);
+}
+
+
+?>
+
+<!-- breadcrumbs -->
+<?= $this->pageBreadcrumbs()->render(); ?>
+
+<div class="container">
+
+    <div class="container_main_body">
+
+        <h5>
+            <i class="fa fa-list"></i>
+            Xem dữ liệu: <?= $this->escapeHtml($device->getDeviceUniqueId()) ?>
+        </h5>
+
+        <div class="top_menu_bar">
+
+            <a class="btn btn-app" href="<?= $this->url('users',
+                ['action' => 'device-view-data-record', 'id' => $device->getId()]); ?>">
+                <i class="fa fa-refresh"></i>
+                Refresh
+            </a>
+
+            <a class="btn btn-app" href="<?= $this->url('users',
+                ['action' => 'device-list']); ?>">
+                <i class="fa fa-sign-out"></i>
+                Thoát
+            </a>
+
+        </div>
+
+        <div class="body_content">
+            <?php echo $this->partial('user/tables/user_device_data_records'); ?>
+        </div>
+
+    </div>
+
+</div>
+
+<!-- scripts -->
+<script type="text/javascript">
+
+    $(document).ready(function () {
+        var user_device_table = EcoIdeaDataTables
+            .initStaticDataTable('user_device_data_records', false);
+    });
+
+</script>
+
+

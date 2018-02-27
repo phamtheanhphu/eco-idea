@@ -1,0 +1,53 @@
+<?php
+/**
+ * Created by PhpStorm.
+ * User: PHUPHAM
+ * Date: 2/24/2018
+ * Time: 9:47 PM
+ */
+
+$this->headTitle('Truy cập không hợp lệ');
+
+$this->pageBreadcrumbs()->setItems([
+    'Trang chủ' => $this->url('home'),
+    'Truy cập không hợp lệ' => $this->url('access-deny'),
+]);
+
+$this->pageBreadcrumbs()->setTopImageBanner(
+    $this->basePath('images/frontend/401_page_top_banner.jpg'));
+
+$this->pageBreadcrumbs()->setPageLabel('Truy cập không hợp lệ - 401');
+
+//init plugins
+if (isset($initPlugins)) {
+    echo $this->partial('app/init_plugin', ['initPlugins' => $initPlugins]);
+}
+
+?>
+
+<!-- breadcrumbs -->
+<?= $this->pageBreadcrumbs()->render(); ?>
+
+<div class="container">
+
+    <div class="container_main_body">
+
+        <h5>
+            <i class="fa fa-exclamation-triangle"></i>
+            Truy cập không hợp lệ
+        </h5>
+
+        <div class="body_content">
+            <div class="row">
+                <div class="col-md-12">
+                    Truy cập của bạn không hợp lệ, xin vui lòng kiểm tra lại, hoặc trở lại
+                    <a href="<?= $this->url('home'); ?>">trang chủ</a>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</div>
+
+

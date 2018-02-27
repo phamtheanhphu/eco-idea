@@ -1,0 +1,57 @@
+<?php
+
+$this->headTitle('Giới thiệu');
+
+$this->mainMenu()->setActiveItemId('gioi-thieu');
+
+$this->pageBreadcrumbs()->setItems([
+    'Trang chủ' => $this->url('trang-chu'),
+    'Giới thiệu' => $this->url('gioi-thieu'),
+]);
+
+$this->pageBreadcrumbs()->setTopImageBanner(
+    $this->basePath('images/frontend/about_top_banner.jpg'));
+
+$this->pageBreadcrumbs()->setPageLabel('Giới thiệu')
+
+?>
+
+<!-- breadcrumbs -->
+<?= $this->pageBreadcrumbs()->render(); ?>
+
+<div class="banner_bottom_agile_info">
+
+    <div class="container">
+
+        <div class="agile_ab_w3ls_info">
+
+            <div class="col-md-6 ab_pic_w3ls">
+                <img src="<?php echo $this->basePath('images/frontend/about_page_left_banner.jpg') ?>"
+                     alt=" " class="img-responsive">
+            </div>
+
+            <div class="col-md-6 ab_pic_w3ls_text_info">
+
+                <h5>Giải pháp thông minh</h5>
+
+                <p style="text-align: justify;">
+                    Nằm trong top những nhà cung cấp giải pháp hệ thống thông minh hàng đầu tại Việt Nam.
+                    <a href="http://eco-idea.vn">Eco-Idea</a> là đơn vị chuyên sản xuất, cung cấp các gói giải pháp quản
+                    lý tổng thể về hệ thống thông minh và một số dịch vụ khác.
+                </p>
+
+                <p style="text-align: justify;">
+                    Cùng với đội ngũ chuyên gia giàu kinh nghiệm trong việc ứng dụng công nghệ thông tin vào cuộc sống
+                    hàng ngày, các giải pháp của <a href="http://eco-idea.vn">Eco-Idea</a> được thiết kế với những thao
+                    tác điều khiển đơn giản, dễ dàng
+                    trong quy trình vận hành và có khả năng tuỳ biến, HomeOS tự tin có thể đáp ứng được yêu cầu của mọi
+                    đối tượng khách hàng.
+                </p>
+
+            </div>
+            <div class="clearfix"></div>
+        </div>
+
+    </div>
+
+</div>

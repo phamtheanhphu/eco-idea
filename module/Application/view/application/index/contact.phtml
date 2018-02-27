@@ -1,0 +1,180 @@
+<?php
+/**
+ * Created by PhpStorm.
+ * User: PHUPHAM
+ * Date: 1/23/2018
+ * Time: 8:31 PM
+ */
+
+$this->headTitle('Liên hệ');
+
+$this->mainMenu()->setActiveItemId('lien-he');
+
+$this->pageBreadcrumbs()->setItems([
+    'Trang chủ' => $this->url('trang-chu'),
+    'Liên hệ' => $this->url('lien-he'),
+]);
+
+$this->pageBreadcrumbs()->setTopImageBanner(
+    $this->basePath('images/frontend/contact_page_left_banner.jpg'));
+
+$this->pageBreadcrumbs()->setPageLabel('Liên hệ')
+
+?>
+
+<!-- breadcrumbs -->
+<?= $this->pageBreadcrumbs()->render(); ?>
+
+<!--/contact-->
+<div class="banner_bottom_agile_info">
+
+    <div class="container">
+
+        <div class="contact-grid-agile-w3s">
+
+            <div class="col-md-4 contact-grid-agile-w3">
+
+                <div class="contact-grid-agile-w31">
+                    <i class="fa fa-map-marker" aria-hidden="true"></i>
+                    <h4>Địa chỉ</h4>
+                    <p>227 Nguyễn Văn Cừ, Quận 5, TP. HCM</p>
+                </div>
+
+            </div>
+
+            <div class="col-md-4 contact-grid-agile-w3">
+
+                <div class="contact-grid-agile-w32">
+                    <i class="fa fa-phone" aria-hidden="true"></i>
+                    <h4>Điện thoại</h4>
+                    <p>(+84)-28-38303625</p>
+                </div>
+
+            </div>
+
+            <div class="col-md-4 contact-grid-agile-w3">
+
+                <div class="contact-grid-agile-w33">
+                    <i class="fa fa-envelope-o" aria-hidden="true"></i>
+                    <h4>Địa chỉ email</h4>
+                    <p>
+                        <a href="mailto:info@eco-idea.vn">info@eco-idea.vn</a>
+                    </p>
+                </div>
+
+            </div>
+
+            <div class="clearfix"></div>
+        </div>
+    </div>
+</div>
+
+<!-- google map location -->
+<div class="contact-w3-agile1 map" data-aos="flip-right">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.6337710977186!2d106.6803805146762!3d10.76268246239049!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752f1c06f4e1dd%3A0x43900f1d4539a3d!2zVHLGsOG7nW5nIMSQ4bqhaSBo4buNYyBLaG9hIGjhu41jIFThu7Egbmhpw6puIFRQSENN!5e0!3m2!1svi!2s!4v1516717912499"
+    "
+    class="map" style="border:0" allowfullscreen="">
+    </iframe>
+</div>
+
+<div class="banner_bottom_agile_info">
+    <div class="container">
+
+        <div class="agile-contact-grids">
+
+            <div class="agile-contact-left">
+
+                <div class="col-md-6 address-grid">
+
+                    <h4>Thông tin liên hệ</h4>
+
+                    <div class="mail-agileits-w3layouts">
+                        <i class="fa fa-volume-control-phone" aria-hidden="true"></i>
+                        <div class="contact-right">
+                            <p>Số điện thoại: </p>
+                            <span>(+84)-28-38303625</span>
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+
+                    <div class="mail-agileits-w3layouts">
+                        <i class="fa fa-envelope-o" aria-hidden="true"></i>
+                        <div class="contact-right">
+                            <p>Địa chỉ email: </p>
+                            <a href="mailto:info@eco-idea.vn">info@eco-idea.vn</a>
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+
+                    <div class="mail-agileits-w3layouts">
+                        <i class="fa fa-map-marker" aria-hidden="true"></i>
+                        <div class="contact-right">
+                            <p>Địa chỉ: </p>
+                            <span>227 Nguyễn Văn Cừ, Quận 5, TP. HCM</span>
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+
+                    <ul class="social-nav model-3d-0 footer-social w3_agile_social two contact">
+                        <li class="share">Mạng xã hội :</li>
+                        <li><a href="#" class="facebook">
+                                <div class="front"><i class="fa fa-facebook" aria-hidden="true"></i></div>
+                                <div class="back"><i class="fa fa-facebook" aria-hidden="true"></i></div>
+                            </a></li>
+                        <li><a href="#" class="twitter">
+                                <div class="front"><i class="fa fa-twitter" aria-hidden="true"></i></div>
+                                <div class="back"><i class="fa fa-twitter" aria-hidden="true"></i></div>
+                            </a></li>
+                        <li><a href="#" class="instagram">
+                                <div class="front"><i class="fa fa-instagram" aria-hidden="true"></i></div>
+                                <div class="back"><i class="fa fa-instagram" aria-hidden="true"></i></div>
+                            </a></li>
+                        <li><a href="#" class="pinterest">
+                                <div class="front"><i class="fa fa-linkedin" aria-hidden="true"></i></div>
+                                <div class="back"><i class="fa fa-linkedin" aria-hidden="true"></i></div>
+                            </a></li>
+                    </ul>
+                </div>
+
+                <!-- contact form -->
+                <div class="col-md-6 contact-form">
+
+                    <h4 class="white-w3ls">Gửi tin nhắn</h4>
+
+                    <form action="#" method="post">
+
+                        <div class="styled-input agile-styled-input-top">
+                            <input type="text" name="Name" required="">
+                            <label>Tên quý khách</label>
+                            <span></span>
+                        </div>
+
+                        <div class="styled-input">
+                            <input type="email" name="Email" required="">
+                            <label>Địa chỉ email</label>
+                            <span></span>
+                        </div>
+
+                        <div class="styled-input">
+                            <input type="text" name="Subject" required="">
+                            <label>Tiêu đề tin nhắn</label>
+                            <span></span>
+                        </div>
+
+                        <div class="styled-input">
+                            <textarea name="Message" required=""></textarea>
+                            <label>Nội dung tin nhắn</label>
+                            <span></span>
+                        </div>
+
+                        <input type="submit" value="Gửi thông tin">
+
+                    </form>
+                </div>
+
+            </div>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+</div>
+<!--//contact-->

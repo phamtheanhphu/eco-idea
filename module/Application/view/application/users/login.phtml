@@ -1,0 +1,76 @@
+<?php
+/**
+ * Created by PhpStorm.
+ * User: phu.pham
+ * Date: 22/2/2018
+ * Time: 10:42 AM
+ */
+
+$this->headTitle('Người dùng');
+
+//$this->mainMenu()->setActiveItemId('lien-he');
+
+$this->pageBreadcrumbs()->setItems([
+    'Trang chủ' => $this->url('trang-chu'),
+    'Người dùng' => $this->url('users'),
+    'Đăng nhập' => $this->url('users', ['action' => 'login']),
+]);
+
+$this->pageBreadcrumbs()->setTopImageBanner(
+    $this->basePath('images/frontend/login_top_banner.jpg'));
+
+$this->pageBreadcrumbs()->setPageLabel('Đăng nhập');
+
+?>
+
+<!-- breadcrumbs -->
+<?= $this->pageBreadcrumbs()->render(); ?>
+
+<div class="banner_bottom_agile_info">
+
+    <div class="container">
+
+        <div class="agile-contact-grids">
+
+            <!-- contact form -->
+            <div class="col-md-6 login-form">
+
+                <h3 class="bars">Đăng nhập</h3>
+
+                <form action="#" method="post">
+
+                    <div class="input-group input-group-lg w3_w3layouts">
+                        <span class="input-group-addon" id="basic-addon_1"><i class="fa fa-user"></i></span>
+                        <input type="text" class="form-control" placeholder="Username" aria-describedby="basic-addon_1">
+                    </div>
+
+                    <div class="input-group input-group-lg w3_w3layouts">
+                        <span class="input-group-addon" id="basic-addon_2"><i class="fa fa-lock"></i></span>
+                        <input type="password" class="form-control" placeholder="Mật khẩu"
+                               aria-describedby="basic-addon_2">
+                    </div>
+
+                    <button type="submit" class="form-button info" style="margin-right: 5px;">Refresh</button>
+
+                    <input type="submit" class="form-button success" value="Đăng nhập">
+
+                </form>
+
+            </div>
+
+
+            <div class="col-md-6">
+
+                <h4>Thông tin đăng nhập</h4>
+
+            </div>
+
+
+            <div class="clearfix"></div>
+
+        </div>
+
+    </div>
+
+</div>
+

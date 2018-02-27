@@ -1,0 +1,37 @@
+<?php
+/**
+ * Created by PhpStorm.
+ * User: PHUPHAM
+ * Date: 1/23/2018
+ * Time: 10:38 PM
+ */
+
+$this->headTitle('Tin tức');
+
+$this->mainMenu()->setActiveItemId('tin-tuc');
+
+$this->pageBreadcrumbs()->setItems([
+    'Trang chủ' => $this->url('trang-chu'),
+    'Tin tức' => $this->url('tin-tuc'),
+]);
+
+$this->pageBreadcrumbs()->setTopImageBanner(
+    $this->basePath('images/frontend/news_top_banner.jpg'));
+
+$this->pageBreadcrumbs()->setPageLabel('Tin tức');
+
+?>
+
+<!-- breadcrumbs -->
+<?= $this->pageBreadcrumbs()->render(); ?>
+
+
+<div class="banner-bootom-w3-agileits">
+
+    <div class="container">
+
+        (Chưa cập nhật)
+
+    </div>
+
+</div>

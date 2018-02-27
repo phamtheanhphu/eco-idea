@@ -1,0 +1,84 @@
+<?php
+/**
+ * Created by PhpStorm.
+ * User: phu.pham
+ * Date: 23/2/2018
+ * Time: 2:47 PM
+ */
+
+$this->headTitle('Quản ly thiết bị');
+
+//$this->mainMenu()->setActiveItemId('lien-he');
+
+$this->pageBreadcrumbs()->setItems([
+    'Quản trị' => $this->url('admin'),
+    'Thiết bị' => $this->url('admin/manage-device', ['action' => 'index']),
+]);
+
+$this->pageBreadcrumbs()->setTopImageBanner(
+    $this->basePath('images/frontend/admin_manage_device_top_banner.jpg'));
+
+$this->pageBreadcrumbs()->setPageLabel('Quản lý thiết bị');
+
+//init plugins
+if (isset($initPlugins)) {
+    echo $this->partial('app/init_plugin', ['initPlugins' => $initPlugins]);
+}
+
+?>
+
+
+<!-- breadcrumbs -->
+<?= $this->pageBreadcrumbs()->render(); ?>
+
+
+<div class="container">
+
+    <div class="container_main_body">
+
+
+
+        <h5>
+            <i class="fa fa-list"></i>
+            Danh sách thiết bị
+        </h5>
+
+        <div class="top_menu_bar">
+
+            <a class="btn btn-app" href="<?= $this->url('admin/manage-device', ['action' => 'add']); ?>">
+                <i class="fa fa-plus"></i>
+                Thêm mới
+            </a>
+
+            <a class="btn btn-app" href="<?= $this->url('admin/manage-device', ['action' => 'index']); ?>">
+                <i class="fa fa-refresh"></i>
+                Refresh
+            </a>
+
+            <a class="btn btn-app" href="<?= $this->url('admin', ['action' => 'index']); ?>">
+                <i class="fa fa-sign-out"></i>
+                Thoát
+            </a>
+
+        </div>
+
+        <div class="body_content">
+            <?php echo $this->partial('manage-device/tables/devices'); ?>
+        </div>
+
+    </div>
+
+</div>
+
+<!-- scripts -->
+<script type="text/javascript">
+
+    $(document).ready(function () {
+        var device_table = EcoIdeaDataTables.initStaticDataTable('device_table', false);
+    });
+
+</script>
+
+
+
+

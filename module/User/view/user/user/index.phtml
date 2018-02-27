@@ -1,0 +1,100 @@
+<?php
+/**
+ * Created by PhpStorm.
+ * User: phu.pham
+ * Date: 26/2/2018
+ * Time: 9:12 AM
+ */
+
+$this->headTitle('Tài khoản người dùng');
+
+$this->pageBreadcrumbs()->setItems([
+    'Người dùng' => $this->url('users'),
+]);
+
+$this->pageBreadcrumbs()->setTopImageBanner(
+    $this->basePath('images/frontend/user_home_page_banner.jpg'));
+
+$this->pageBreadcrumbs()->setPageLabel('Xin chào, ' . $user->getFullname());
+
+//init plugins
+if (isset($initPlugins)) {
+    echo $this->partial('app/init_plugin', ['initPlugins' => $initPlugins]);
+}
+
+?>
+
+<!-- breadcrumbs -->
+<?= $this->pageBreadcrumbs()->render(); ?>
+
+<div class="container">
+
+    <div class="container_main_body">
+
+        <h5>
+            <i class="fa fa-list"></i>
+            Xin chào, <?= $user->getFullname(); ?>
+        </h5>
+
+
+        <div class="body_content">
+
+            <div class="row">
+
+                <div class="col-md-12">
+
+                    <figure class="snip1321">
+
+                        <img src="<?= $this->basePath('images/frontend/user_buttons/manage_devices.png'); ?>"/>
+
+                        <figcaption>
+                            <i class="ion-upload"></i>
+                            <h4>Quản lý </h4>
+                            <h2>Thiết bị</h2>
+                        </figcaption>
+
+                        <a href="<?= $this->url('users', ['action' => 'device-list']); ?>"></a>
+
+                    </figure>
+
+                    <figure class="snip1321">
+
+                        <img src="<?= $this->basePath('images/frontend/user_buttons/update_profile.png'); ?>"/>
+
+                        <figcaption>
+                            <i class="ion-upload"></i>
+                            <h4>Cập nhật </h4>
+                            <h2>Thông tin</h2>
+                        </figcaption>
+
+                        <a href="<?= $this->url('users',
+                            ['action' => 'change-password']); ?>"></a>
+
+                    </figure>
+
+                    <figure class="snip1321">
+
+                        <img src="<?= $this->basePath('images/frontend/user_buttons/change_password.png'); ?>"/>
+
+                        <figcaption>
+                            <i class="ion-upload"></i>
+                            <h4>Thay đổi </h4>
+                            <h2>Mật khẩu</h2>
+                        </figcaption>
+
+                        <a href="<?= $this->url('users',
+                            ['action' => 'change-password']); ?>"></a>
+
+                    </figure>
+
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+</div>

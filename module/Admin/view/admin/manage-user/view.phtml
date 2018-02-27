@@ -1,0 +1,138 @@
+<?php
+/**
+ * Created by PhpStorm.
+ * User: phu.pham
+ * Date: 23/2/2018
+ * Time: 1:22 PM
+ */
+
+$this->headTitle('Xem thông tin tài khoản');
+
+//$this->mainMenu()->setActiveItemId('lien-he');
+
+$this->pageBreadcrumbs()->setItems([
+    'Quản trị' => $this->url('admin'),
+    'Danh sách người dùng' => $this->url('admin/manage-user', ['action' => 'index']),
+    'Xem thông tin tài khoản' => $this->url('admin/manage-user',
+        ['action' => 'view', 'id' => $user->getId()]),
+]);
+
+$this->pageBreadcrumbs()->setTopImageBanner(
+    $this->basePath('images/frontend/admin_manage_user_top_banner.jpg'));
+
+$this->pageBreadcrumbs()->setPageLabel('Xem thông tin tài khoản');
+
+//init plugins
+if (isset($initPlugins)) {
+    echo $this->partial('app/init_plugin', ['initPlugins' => $initPlugins]);
+}
+
+?>
+
+<!-- breadcrumbs -->
+<?= $this->pageBreadcrumbs()->render(); ?>
+
+
+<div class="container">
+
+    <div class="container_main_body">
+
+        <h5>
+            <i class="fa fa-edit"></i>
+            Thông tin: <?= $this->escapeHtml($user->getEmail()) ?>
+        </h5>
+
+        <div class="top_menu_bar">
+
+            <a href="<?= $this->url('admin/manage-user', ['action' => 'edit', 'id' => $user->getId()]); ?>"
+               class="btn btn-app">
+                <i class="fa fa-edit"></i>
+                Cập nhật
+            </a>
+
+            <a href="<?= $this->url('admin/manage-user', ['action' => 'change-password', 'id' => $user->getId()]); ?>"
+               class="btn btn-app">
+                <i class="fa fa-lock"></i>
+                Mật khẩu
+            </a>
+
+            <a href="<?= $this->url('admin/manage-user', ['action' => 'view', 'id' => $user->getId()]); ?>"
+               class="btn btn-app">
+                <i class="fa fa-refresh"></i>
+                Refresh
+            </a>
+
+            <a class="btn btn-app" href="<?= $this->url('admin/manage-user', ['action' => 'index']); ?>">
+                <i class="fa fa-sign-out"></i>
+                Thoát
+            </a>
+
+        </div>
+
+        <div class="body_content">
+
+
+            <div class="row">
+
+                <div class="col-md-12">
+
+                    <table class="table table-striped table-bordered">
+
+                        <tr>
+                            <th>
+                                <?= $this->translate('Mã'); ?>
+                            </th>
+                            <td>
+                                <?= $this->escapeHtml($user->getId()) ?>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <th>
+                                <?= $this->translate('Email'); ?>
+                            </th>
+                            <td>
+                                <?= $this->escapeHtml($user->getEmail()) ?>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>
+                                <?= $this->translate('Tên người dùng'); ?>
+                            </th>
+                            <td>
+                                <?= $this->escapeHtml($user->getFullName()) ?>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <th>
+                                <?= $this->translate('Ngày tạo'); ?>
+                            </th>
+                            <td>
+                                <?= $this->escapeHtml($user->getDateCreated()) ?>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <th>
+                                <?= $this->translate('Tình trạng'); ?>
+                            </th>
+                            <td>
+                                <?= $this->escapeHtml($user->getStatusAsString()) ?>
+                            </td>
+                        </tr>
+
+                    </table>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+</div>
+

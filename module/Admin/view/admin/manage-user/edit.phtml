@@ -1,0 +1,121 @@
+<?php
+/**
+ * Created by PhpStorm.
+ * User: phu.pham
+ * Date: 23/2/2018
+ * Time: 10:04 AM
+ */
+
+$this->headTitle('Cập nhật người dùng');
+
+//$this->mainMenu()->setActiveItemId('lien-he');
+
+$this->pageBreadcrumbs()->setItems([
+    'Quản trị' => $this->url('admin'),
+    'Danh sách người dùng' => $this->url('admin/manage-user', ['action' => 'index']),
+    'Cập nhật người dùng' => $this->url('admin/manage-user',
+        ['action' => 'edit', 'id' => $user->getId()]),
+]);
+
+$this->pageBreadcrumbs()->setTopImageBanner(
+    $this->basePath('images/frontend/admin_manage_user_top_banner.jpg'));
+
+$this->pageBreadcrumbs()->setPageLabel('Cập nhật người dùng');
+
+//init plugins
+if (isset($initPlugins)) {
+    echo $this->partial('app/init_plugin', ['initPlugins' => $initPlugins]);
+}
+
+$form->setAttribute('id', 'edit_user_form');
+
+$form->get('submit')
+    ->setAttributes(['class' => 'btn btn-app'])
+    ->setValue('Save');
+
+$form->prepare();
+
+?>
+
+<!-- breadcrumbs -->
+<?= $this->pageBreadcrumbs()->render(); ?>
+
+
+<div class="container">
+
+    <div class="container_main_body">
+
+        <h5>
+            <i class="fa fa-edit"></i>
+            Cập nhật: <?= $this->escapeHtml($user->getEmail()) ?>
+        </h5>
+
+        <div class="top_menu_bar">
+
+            <a class="btn btn-app" onclick="document.getElementById('edit_user_form').submit();">
+                <i class="fa fa-save"></i>
+                Lưu lại
+            </a>
+
+            <a href="<?= $this->url('admin/manage-user', ['action' => 'edit', 'id' => $user->getId()]); ?>"
+               class="btn btn-app">
+                <i class="fa fa-refresh"></i>
+                Refresh
+            </a>
+
+            <a class="btn btn-app" href="<?= $this->url('admin/manage-user', ['action' => 'index']); ?>">
+                <i class="fa fa-sign-out"></i>
+                Thoát
+            </a>
+
+        </div>
+
+        <div class="body_content">
+
+            <div class="row">
+
+                <div class="col-md-12">
+
+                    <?= $this->form()->openTag($form); ?>
+
+                    <div class="form-group">
+                        <?= $this->formLabel($form->get('email')); ?>
+                        <?= $this->formElement($form->get('email')); ?>
+                        <?= $this->formElementErrors($form->get('email')); ?>
+                    </div>
+
+                    <div class="form-group">
+                        <?= $this->formLabel($form->get('full_name')); ?>
+                        <?= $this->formElement($form->get('full_name')); ?>
+                        <?= $this->formElementErrors($form->get('full_name')); ?>
+                    </div>
+
+                    <div class="form-group">
+                        <?= $this->formLabel($form->get('status')); ?>
+                        <?= $this->formElement($form->get('status')); ?>
+                        <?= $this->formElementErrors($form->get('status')); ?>
+                    </div>
+
+                    <div class="form-group">
+                        <?= $this->formLabel($form->get('group')); ?>
+                        <?= $this->formElement($form->get('group')); ?>
+                        <?= $this->formElementErrors($form->get('group')); ?>
+                    </div>
+
+                    <?= $this->form()->closeTag(); ?>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+</div>
+
+
+
+
+

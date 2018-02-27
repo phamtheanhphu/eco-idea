@@ -1,0 +1,143 @@
+<?php
+/**
+ * Created by PhpStorm.
+ * User: phu.pham
+ * Date: 23/2/2018
+ * Time: 2:48 PM
+ */
+
+$this->headTitle('Cập nhật thiết bị');
+
+//$this->mainMenu()->setActiveItemId('lien-he');
+
+$this->pageBreadcrumbs()->setItems([
+    'Quản trị' => $this->url('admin'),
+    'Thiết bị' => $this->url('admin/manage-device', ['action' => 'index']),
+    'Cập nhật' => $this->url('admin/manage-device',
+        ['action' => 'edit', 'id' => $device->getId()]),
+]);
+
+$this->pageBreadcrumbs()->setTopImageBanner(
+    $this->basePath('images/frontend/admin_manage_device_top_banner.jpg'));
+
+$this->pageBreadcrumbs()->setPageLabel('Cập nhật thiết bị');
+
+//init plugins
+if (isset($initPlugins)) {
+    echo $this->partial('app/init_plugin', ['initPlugins' => $initPlugins]);
+}
+
+$form->setAttribute('id', 'edit_device_form');
+
+$form->prepare();
+
+?>
+
+<!-- breadcrumbs -->
+<?= $this->pageBreadcrumbs()->render(); ?>
+
+
+<div class="container">
+
+    <div class="container_main_body">
+
+        <h5>
+            <i class="fa fa-plus"></i>
+            Cập nhật thiết bị: <?= $device->getDeviceUniqueId(); ?>
+        </h5>
+
+        <div class="top_menu_bar">
+
+            <a class="btn btn-app" onclick="document.getElementById('edit_device_form').submit();">
+                <i class="fa fa-save"></i>
+                Lưu lại
+            </a>
+
+            <a href="<?= $this->url('admin/manage-device', ['action' => 'edit', 'id' => $device->getId()]); ?>"
+               class="btn btn-app">
+                <i class="fa fa-refresh"></i>
+                Refresh
+            </a>
+
+            <a class="btn btn-app" href="<?= $this->url('admin/manage-device', ['action' => 'index']); ?>">
+                <i class="fa fa-sign-out"></i>
+                Thoát
+            </a>
+
+        </div>
+
+        <div class="body_content">
+
+            <div class="row">
+
+                <div class="col-md-4">
+
+                    <?php if ($device->getImage()): ?>
+                        <img style="max-width: 300px;max-height: 300px"
+                             src="<?= $this->basePath('uploads/' . $this->escapeHtml($device->getImage())); ?>">
+                    <?php else: ?>
+                        <img style="max-width: 300px;max-height: 300px"
+                             src="<?= $this->basePath('images/noimage.png'); ?>">
+                    <?php endif; ?>
+
+                </div>
+
+                <div class="col-md-8">
+
+                    <?= $this->form()->openTag($form); ?>
+
+                    <!-- user_id -->
+                    <div class="form-group">
+                        <?= $this->formLabel($form->get('user_id')); ?>
+                        <?= $this->formElement($form->get('user_id')); ?>
+                        <?= $this->formElementErrors($form->get('user_id')); ?>
+                    </div>
+
+                    <!-- device_type_id -->
+                    <div class="form-group">
+                        <?= $this->formLabel($form->get('device_type_id')); ?>
+                        <?= $this->formElement($form->get('device_type_id')); ?>
+                        <?= $this->formElementErrors($form->get('device_type_id')); ?>
+                    </div>
+
+                    <!-- device_unique_id -->
+                    <div class="form-group">
+                        <?= $this->formLabel($form->get('device_unique_id')); ?>
+                        <?= $this->formElement($form->get('device_unique_id')); ?>
+                        <?= $this->formElementErrors($form->get('device_unique_id')); ?>
+                    </div>
+
+                    <!-- status -->
+                    <div class="form-group">
+                        <?= $this->formLabel($form->get('status')); ?>
+                        <?= $this->formElement($form->get('status')); ?>
+                        <?= $this->formElementErrors($form->get('status')); ?>
+                    </div>
+
+                    <!-- description -->
+                    <div class="form-group">
+                        <?= $this->formLabel($form->get('description')); ?>
+                        <?= $this->formElement($form->get('description')); ?>
+                        <?= $this->formElementErrors($form->get('description')); ?>
+                    </div>
+
+                    <!-- image -->
+                    <div class="form-group">
+                        <?= $this->formLabel($form->get('image')); ?>
+                        <?= $this->formElement($form->get('image')); ?>
+                        <?= $this->formElementErrors($form->get('image')); ?>
+                    </div>
+
+                    <?= $this->form()->closeTag(); ?>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+</div>
+

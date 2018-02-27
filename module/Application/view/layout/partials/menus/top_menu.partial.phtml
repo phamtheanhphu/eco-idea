@@ -1,0 +1,56 @@
+<?php
+/**
+ * Created by PhpStorm.
+ * User: phu.pham
+ * Date: 23/1/2018
+ * Time: 1:57 PM
+ */
+?>
+
+<div class="top_nav_left">
+
+    <nav class="navbar navbar-default">
+
+        <div class="container-fluid">
+
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                        data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse menu--shylock" id="bs-example-navbar-collapse-1">
+
+                <?php
+
+                // Check if the activeMenuItemId passed to layout view model
+                // and if so, use it for setting active navbar item.
+                if (isset($activeMenuItemId)) {
+                    $this->mainMenu()->setActiveItemId($activeMenuItemId);
+                }
+
+                // Render main menu item
+                echo $this->mainMenu()->renderMainMenu();
+
+                ?>
+
+
+            </div>
+
+        </div>
+
+    </nav>
+
+</div>
+
+<div class="top_nav_right">
+    <?php echo $this->mainMenu()->renderUserMenu(); ?>
+</div>
+
+
